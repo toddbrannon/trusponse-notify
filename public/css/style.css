@@ -568,6 +568,11 @@ body {
   margin-top: 1rem;
   max-width: 100%;
 }
+
+.btn-back {
+  margin: auto;
+  max-width: 50%;
+
 .col-action {
   display: flex;
   justify-content: center;
