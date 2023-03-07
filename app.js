@@ -1,21 +1,17 @@
-const express               = require("express"),
-    app                     = express(),
-    bodyParser              = require("body-parser"),
-    mongoose                = require("mongoose"),
-//    Comment                 = require("./models/comment"),
-    User                    = require("./models/user"),
-    passport                = require("passport"),
-    LocalStrategy           = require("passport-local"),
-    // nodeMailer              = require("nodemailer"),
-//    seedDB                  = require("./seeds");
-    flash                   = require("connect-flash"),
-    passportLocalMongoose   = require("passport-local-mongoose"),
-    methodOverride          = require("method-override"),
-    createError             = require('http-errors'),
-    logger                  = require('morgan');
-    // csv                     = require('csvtojson/v1'),
-    // schedule                = require('node-schedule'),
-    // template                = require('./template.js');
+require('dotenv').config()
+const express = require("express")
+const app = express()
+const bodyParser = require("body-parser")
+const mongoose = require("mongoose")
+const User = require("./models/user")
+const passport = require("passport")
+const LocalStrategy = require("passport-local")
+const flash = require("connect-flash")
+const passportLocalMongoose = require("passport-local-mongoose")
+const methodOverride = require("method-override")
+const createError = require('http-errors')
+const logger = require('morgan');
+
 
 const port = process.env.PORT || 3000;
 
@@ -34,23 +30,17 @@ app.use(bodyParser.urlencoded({extended: true}));
 //seedDB();
     
 // Requiring Routes ============================================================
-var prospectsRoutes         = require("./routes/prospects"),
-    indexRoutes             = require("./routes/index"),
-    expandRoutes            = require("./routes/expand_demo");
+const prospectsRoutes = require("./routes/prospects")
+const indexRoutes = require("./routes/index")
+const expandRoutes = require("./routes/expand_demo")
 //==============================================================================
-
-// Load Keys ===================================================================
-// const keys                  = require('./config/keys');   // For Dev only!
-// Use mongoURI for production (Heroku - ) 
-
-// MongoDB Atlas Dev
 
 // MongoDB Atlas Prod
 
 const mongoURI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@trusponse.ugdwe.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`   
 
 // Map global promises
-mongoose.Promise            = global.Promise;
+mongoose.Promise = global.Promise;
 
 // mongoose.connect("mongodb://localhost/trusponse_notify");
 // Below updated 3/17/2021
@@ -62,9 +52,6 @@ const connection = mongoose
     .then(() => console.log('connected to the trusponse-notify-demo mongodbatlas collection...'))
     .catch(err => console.log(err)
 );
-    
-
-
 
 //==============================================================================
 // PASSPORT CONFIGURATION

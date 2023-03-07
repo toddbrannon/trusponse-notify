@@ -4,20 +4,25 @@
 <!-- <header class="jumbotron"> -->
     <div class = "container py-5">
         <h1>Welcome to the TruSponse Notify Demo</h1>
-            <h4>A CRUD style app built with NodeJS/Express/MongoDB</h4>
+            <h4>A CRUD style app built with NodeJS/Express/MongoDB
+            </h4>
             <div class="row">
                 <div class="col-sm-12 col-action">
                     <div class="inner-action">
-                        <ul id="button-actions">
+                        
                             <% if(!currentUser){ %>
                                 <!--<a class = "btn btn-primary btn-lg" href="/login3">Login</a>-->
                                 <!--<p>Login to get started!<p>-->
                             <% } else { %>
-                                <li><a class = "btn btn-primary btn-lg button-landing" href="/prospects"><i class="fas fa-glasses"></i>  View All</a></li>
+                                <!-- <li><a class = "btn btn-primary btn-lg button-landing" href="/prospects"><i class="fas fa-glasses"></i>  View All</a></li>
                                 <li><a class = "btn btn-success btn-lg button-landing" href="/prospects/new"><i class="fas fa-plus"></i>  Add New</a></li>
-                                <li><a class = "btn btn-info btn-lg button-landing" href="/logout"><i class="fas fa-sign-out-alt"></i>  Logout</a></li> 
+                                <li><a class = "btn btn-info btn-lg button-landing" href="/logout"><i class="fas fa-sign-out-alt"></i>  Logout</a></li>  -->
+
+                                <a type="button" class="btn btn-primary btn-sm btn-landing ml-1 mr-1" href="/prospects"><i class="fas fa-glasses"></i> View All</a>
+                                <a type="button" class="btn btn-success btn-sm btn-landing ml-1 mr-1" href="/prospects/new"><i class="fas fa-plus"></i>  Add New</a>
+                                <a type="button" class="btn btn-info btn-sm button-landing ml-1 mr-1" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
                             <% } %>
-                        </ul>
+                        
                     </div>
                     
 

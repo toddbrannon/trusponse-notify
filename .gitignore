@@ -3,3 +3,4 @@ customers_db_code.md
 seeds.js
 readme.md
 node_modules/
+.env
