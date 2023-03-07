@@ -572,6 +572,7 @@ body {
 .btn-back {
   margin: auto;
   max-width: 50%;
+}
 
 .col-action {
   display: flex;
